@@ -23,7 +23,7 @@ function login($username, $password, $ip) {
         $found_user_id = $found_user['user_id'];//get user id
         //write the username and userID into session
         $_SESSION['user_id'] = $found_user_id;
-        $_SESSION['user_name'] = $found_user['user_fname'];
+        $_SESSION['user_name'] = $found_user['user_name'];
         $_SESSION['login_times'] = $found_user['login_times']+1;
       
 
