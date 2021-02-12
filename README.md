@@ -3,6 +3,7 @@
 * Displays date/time of LAST successful login.<br>
 * Account complete lockout after 5 failed login attempts.<br>
 * Count the total successfully login number of the account.<br>
+* Allows admin to login and create a new user. <br>
 
 ## Section
 * Login Page<br>

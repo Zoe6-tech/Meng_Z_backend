@@ -59,7 +59,7 @@ if(isset($_SESSION['user_id'])){
        <br><br>
        <button type="submit" name="submit">Login</button>
        <h4>* Login Attempt: <?php echo $_SESSION['login_attempts']; ?> </h4>
-        <h5>Account will complete lockout after you 3 failed login attempts, please be careful ！！！</h5>
+        <!-- <h5>Account will complete lockout after you 3 failed login attempts, please be careful ！！！</h5> -->
     </form>
 </body>
 </html>
