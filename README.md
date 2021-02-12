@@ -3,11 +3,16 @@
 * Displays date/time of LAST successful login.<br>
 * Account complete lockout after 5 failed login attempts.<br>
 * Count the total successfully login number of the account.<br>
+
+## Admin Add new user
 * Allows admin to login and create a new user. <br>
+
+[Back-End Roadmap](https://docs.google.com/document/d/1Q_sYSP3GiP5ZW-WuqgzzDQsDQYHUyVFd51qVUREe3i4/edit?usp=sharing) is here.<br>
 
 ## Section
 * Login Page<br>
-* Welcome page
+* Welcome page<br>
+* Create User page
 
 
 ## Author
