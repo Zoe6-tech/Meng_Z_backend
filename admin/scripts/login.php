@@ -24,6 +24,7 @@ function login($username, $password, $ip) {
         //write the username and userID into session
         $_SESSION['user_id'] = $found_user_id;
         $_SESSION['user_name'] = $found_user['user_name'];
+        $_SESSION['user_level'] = $found_user['user_level'];//show user level
         $_SESSION['login_times'] = $found_user['login_times']+1;
       
 

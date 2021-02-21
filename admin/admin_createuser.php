@@ -90,7 +90,8 @@ $user_password = genRandomString(); //password function
         'lname' => trim($_POST['lname']),
         'username' => trim($_POST['username']),
         'password' => $hash,
-        'email' => trim($_POST['email'])
+        'email' => trim($_POST['email']),
+        'user_level' => trim($_POST['user_level']),
     );
 
     $message = createUser($data);// create user function
@@ -126,7 +127,15 @@ $user_password = genRandomString(); //password function
         <label for="email">Email:</label><br>
         <input type="email" name="email"  id="email" placeholder="enter email" value=""><br><br>
 
-        <button  class="subimt-createuser" type="submit" name="submit">Create user</button>
+        <label for="user_level">User Level:</label><br>
+        <select  name="user_level"  id="user_level" >
+          <?php  $user_level_map = getUserLevelMap();
+           foreach($user_level_map as $val => $label): ?>
+          <option value="<?php echo $val;?>"><?php echo $label;?></option>   
+          <?php endforeach;?>
+        </select><br><br>
+
+        <button  class="subimt-createuser" type="submit" name="submit">Submit</button>
     </form>
     
     <script src="./js/mail.js" type="module"></script>
