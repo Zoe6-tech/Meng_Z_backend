@@ -1,12 +1,35 @@
 <?php
 
+
+//drop down menu
+function getUserLevelMap(){
+    return array(
+        '0' => 'Member',
+        '1' => 'Admin',
+        '2' => 'Super Admin',
+        
+    );
+}
+
+//display user level on dashboard
+function getCurrentUserLevel(){
+    $user_level_map = getUserLevelMap();
+    if(isset($_SESSION['user_level']) && array_key_exists($_SESSION['user_level'], $user_level_map)){
+        // array_key_exists will check $_SESSION['user_level'] whether exist in array $user_level_map for not
+        return $user_level_map[$_SESSION['user_level']];
+    }else{
+        return "unrecognized";
+    }
+}
+
+//insert new user info in database
 function createUser($user_data){
     ##testing only, remove it later
     // return var_export($user_data, true);
     $pdo = Database::getInstance() -> getConnection();
 
-    $create_user_query = 'INSERT INTO tbl_users(user_fname, user_lname, user_name, user_password, user_email)';
-    $create_user_query .= ' VALUE(:fname, :lname, :username, :password, :email) '; //use placeholder prevent SQL injection
+    $create_user_query = 'INSERT INTO tbl_users(user_fname, user_lname, user_name, user_password, user_email, user_level)';
+    $create_user_query .= ' VALUE(:fname, :lname, :username, :password, :email, :user_level) '; //use placeholder prevent SQL injection
 
   
     //return $create_user_query;
@@ -16,11 +39,12 @@ function createUser($user_data){
     $create_user_set = $pdo -> prepare($create_user_query);
     $create_user_result = $create_user_set -> execute(
         array(
-            'fname' => $user_data['fname'],
-            'lname' => $user_data['lname'],
-            'username' => $user_data['username'],
-            'password' => $user_data['password'],
-            'email' => $user_data['email'],
+            ':fname' => $user_data['fname'],
+            ':lname' => $user_data['lname'],
+            ':username' => $user_data['username'],
+            ':password' => $user_data['password'],
+            ':email' => $user_data['email'],
+            ':user_level' =>$user_data['user_level'],
         )
     );
 

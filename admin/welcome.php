@@ -17,9 +17,12 @@ confirm_logged_in();//only login in user can see the index.php page
     <h4>IP address:  <?php echo $_SESSION['user_ip']?></h4>
     <h4>Last Login Time: <?php echo $_SESSION['last_login']; ?></h4>
     <h4>Number of Successful Login: <?php echo $_SESSION['login_times'];?></h4>
-    <br>
-    
+
+    <h3>You are in level: <?php echo getCurrentUserLevel();?></h3>
+    <?php if(!empty($_SESSION['user_level'])):?>
     <a href="admin_createuser.php">Create User</a>
+    <?php endif;?>
+    
     <a href="admin_logout.php">Sign Out</a>
     
 </body>
