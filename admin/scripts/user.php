@@ -16,11 +16,11 @@ function createUser($user_data){
     $create_user_set = $pdo -> prepare($create_user_query);
     $create_user_result = $create_user_set -> execute(
         array(
-            'fname' => trim($_POST['fname']),
-            'lname' => trim($_POST['lname']),
-            'username' => trim($_POST['username']),
-            'password' => trim($_POST['password']),
-            'email' => trim($_POST['email'])
+            'fname' => $user_data['fname'],
+            'lname' => $user_data['lname'],
+            'username' => $user_data['username'],
+            'password' => $user_data['password'],
+            'email' => $user_data['email'],
         )
     );
 
@@ -29,13 +29,13 @@ function createUser($user_data){
     ## 2. Redirect to index.php if create user successfully, mayber leave some message to user? 
     ## Otherwise, showing error message
     if($create_user_result){
-        redirect_to('welcome.php');
+        redirect_to('admin_createsuccess.php');
     }else{
         return 'The user did not go through!!!';
     }
 
 
 
-    ## 3. 
+
 }
 
