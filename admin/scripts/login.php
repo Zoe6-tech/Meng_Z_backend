@@ -66,7 +66,7 @@ function login($username, $password, $ip) {
        //return 'Hello, ' . $username . '!  <br />  Your IP address (using $_SERVER[\'REMOTE_ADDR\']) is ' . $ip . '<br /><br />';
                
        //after login in succes, redirect user back to welcome.php, redirect_to function
-       redirect_to('welcome.php');
+       redirect_to('index.php');
 
     }else{
 
