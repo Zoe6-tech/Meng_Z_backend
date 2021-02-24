@@ -15,7 +15,7 @@ confirm_logged_in();//only login in user can see the index.php page
 <body>
     <h2>Hi, <?php echo $_SESSION['user_name'];?>! You have successfuly create a new user. </h2>
     <br>
-    <a href="welcome.php">Back</a><br>
+    <a href="index.php">Back</a><br>
     <a href="admin_createuser.php">Create another User</a><br>
     <a href="admin_logout.php">Sign Out</a>
 

@@ -57,9 +57,25 @@ function createUser($user_data){
     }else{
         return 'The user did not go through!!!';
     }
-
-
-
-
 }
+
+function getSingleUser($user_id){
+     echo 'you are try to fetch user :'.$user_id;
+    $pdo = Database::getInstance() -> getConnection();
+
+    $get_user_query = 'SELECT * FROM tbl_users WHERE user_id = :id';//SQL placeholder to aviod SQL injection
+    $get_user_set = $pdo ->prepare($get_user_query);
+    $get_user_result = $get_user_set -> execute(
+        array(
+            ':id' => $user_id
+        )
+        );
+
+    if($get_user_result && $get_user_set ->rowCount()){
+        return $get_user_set;
+    }else{
+        return false;
+    }
+}
+
 
