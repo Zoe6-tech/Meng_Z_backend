@@ -10,6 +10,21 @@ $current_user = getSingleUser($id);//function in user.php
 if(empty($current_user)){//is user doesnt exist
     $message = 'failed to get user info';
 }
+
+// when user click submit
+if(isset($_POST['submit'])){
+    $data = array(
+        'fname'      => trim($_POST['fname']),
+        'lname'      => trim($_POST['lname']),
+        'username'   => trim($_POST['username']),
+        'password'   => trim($_POST['password']),
+        'email'      => trim($_POST['email']),
+        'user_level' => isCurrentUserAdminAbove()?trim($_POST['user_level']):'0',
+        'id'         => $id,//update a exist user so need id
+    );
+    
+  $message = editUser($data);//update user info to database
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,14 +62,20 @@ if(empty($current_user)){//is user doesnt exist
                     <input type="email" name="email"  id="email" placeholder="enter email" value="<?php echo $user_info['user_email']; ?>">
                     <br><br>
 
-                    <label for="user_level">User Level:</label><br>
-                    <select  name="user_level"  id="user_level" >
-                    <?php  $user_level_map = getUserLevelMap();
-                    foreach($user_level_map as $val => $label): ?>
-                    <option value="<?php echo $val;?>"><?php echo $label;?></option>   
-                    <?php endforeach;?>
-                    </select><br><br>
+                    
+                    <?php if(isCurrentUserAdminAbove()):?>
+                        <label for="user_level">User Level:</label><br>
+                        <select  name="user_level"  id="user_level" >
+                            <?php  $user_level_map = getUserLevelMap();
+                            foreach($user_level_map as $val => $label): ?>
+                            <option value="<?php echo $val;?>"<?php echo $val ===(int)$user_info['user_level']?'selected':'';?>><?php echo $label;?></option>   
+                            <?php endforeach;?>
+                        </select><br><br>
+                    <?php endif;?>
+
                     <button  class="subimt-createuser" type="submit" name="submit">Submit</button>
+                    <a href="index.php">Back</a><br>
+
                 <?php endwhile;?>
             </form>
         <?php endif;?>

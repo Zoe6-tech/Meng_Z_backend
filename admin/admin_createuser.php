@@ -136,6 +136,7 @@ $user_password = genRandomString(); //password function
         </select><br><br>
 
         <button  class="subimt-createuser" type="submit" name="submit">Submit</button>
+        <a href="index.php">Back</a><br>
     </form>
     
     <script src="./js/mail.js" type="module"></script>
