@@ -54,7 +54,7 @@ if(isset($_POST['submit'])){
     }
 
 //Auto-generate the password for the user
-$user_password = genRandomString(); //password function
+   $user_password = genRandomString(); //password function
 
 //prepare email
     $email_recipient = $user_email; //to user email
@@ -83,13 +83,13 @@ $user_password = genRandomString(); //password function
 
 //password setting2
     //password is encrypted and stored in the database
-    $hash = password_hash($user_password, PASSWORD_DEFAULT);
+    //$hash = password_hash($user_password, PASSWORD_DEFAULT);
     
     $data = array(
         'fname' => trim($_POST['fname']),
         'lname' => trim($_POST['lname']),
         'username' => trim($_POST['username']),
-        'password' => $hash,
+        'password' => $user_password,
         'email' => trim($_POST['email']),
         'user_level' => trim($_POST['user_level']),
     );
@@ -139,6 +139,6 @@ $user_password = genRandomString(); //password function
         <a href="index.php">Back</a><br>
     </form>
     
-    <script src="./js/mail.js" type="module"></script>
+    <script src="./public/js/mail.js" type="module"></script>
 </body>
 </html>

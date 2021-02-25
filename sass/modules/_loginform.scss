@@ -1,0 +1,78 @@
+.login_area{
+    width: 60%;
+    height: auto;
+    background-color: $black;
+    display: flex;
+    flex-direction: row;
+    margin: 5% auto;
+}
+
+.logo_area{
+    background-color: $red;
+    width: 50%;
+    height: auto;
+    text-align: center;
+    .logo{
+        width: 200px;
+        margin: 17% auto;
+        
+    }
+    h2{
+        font-size: 28px;
+        margin: 1%;
+    }
+}
+
+
+.login_form_area{
+    width: 50%;
+    height: auto;
+    background-color: $black;
+    color: $white;
+    margin: 20% 0;
+    h3{
+        font-size: 25px;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .login_form{
+        margin: 5% 10%;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        input[type=text]{
+            text-decoration: none;
+            border: 5px double #ffffff;
+            color: black;
+            font-size: 13px;
+            padding: 5px 20px;
+            height: 20px;
+            margin-top: 2%;
+            transition: all 0.5s;
+            cursor: pointer;
+            
+        }
+
+        button{
+            text-decoration: none;
+            display: inline-block;
+            border:2px double $red;
+            color: $black;
+            background-color: $red;
+            text-align: center;
+            font-size: 15px;
+            padding: 5px 10px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5% 0;
+        }
+    
+        button:hover{
+            text-decoration: underline;
+        }
+
+    }
+}
