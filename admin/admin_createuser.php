@@ -138,6 +138,7 @@ if(isset($_POST['submit'])){
                 <option value="<?php echo $val;?>"><?php echo $label;?></option>   
                 <?php endforeach;?>
                 </select><br><br>
+                
                  <div class="create_user_buttons">
                 <button  class="subimt-createuser" type="submit" name="submit">CREATE</button>
                 <a href="index.php">BACK</a>
