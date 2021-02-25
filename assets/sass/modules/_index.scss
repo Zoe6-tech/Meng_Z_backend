@@ -1,0 +1,78 @@
+.index_php{
+    display: flex;
+    flex-direction: row;
+
+    .dashboard_area{
+        margin-top: 3%;
+        background-color: $white;
+        border-color: $red;
+        width: 65%;
+        height: 700px;
+        h2{
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20%;
+        }
+    }
+   
+}
+
+
+
+.login_user{
+    margin: 3%;
+    background-color: $black;
+    width: 23%;
+    height: 300px;
+    color: $white;
+   
+
+    .login_info{
+        margin: 0 auto;
+        background-color: $black;
+    }
+
+    h2{
+        font-size: 30px;
+        padding: 5%;
+        text-align: center;
+    }
+    
+    h3{
+        font-size: 20px;
+        margin-left: 5%;
+        padding-bottom: 1%;
+    }
+
+    h4{
+        font-size: 17px;
+        padding-top: 2%;
+        margin-left: 5%;
+    }
+
+.login_user_buttons{
+    display: flex;
+    flex-direction: column;
+    margin: 3% 0;
+    a{
+        text-decoration: none;
+        display: inline-block;
+        border:2px double $white;
+        color: $black;
+        background-color: $white;
+        text-align: center;
+        width: 80%;
+        font-size: 15px;
+        padding: 5px 10px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 1% 5%;
+    }
+
+    a:hover{
+        text-decoration: underline;
+        color: $red;
+    }
+}
+   
+}
