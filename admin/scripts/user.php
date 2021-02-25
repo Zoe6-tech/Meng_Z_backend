@@ -114,7 +114,7 @@ function editUser($user_data){
 
     if($update_user_result){
         //check update session after edit user
-        $_SESSION['user_name'] = $user_data['fname'];//up to date
+        $_SESSION['user_name'] = $user_data['username'];//up to date
         $_SESSION['user_level'] = $user_data['user_level'];
         redirect_to('index.php');
     }else{
