@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
                             </div>
                          
                             <div class="edituser_label_input">
-                            <label for="email">Email:</label>
+                            <label for="email">User Email:</label>
                             <input type="email" name="email"  id="email"  value="<?php echo $user_info['user_email']; ?>">
                             </div>
 
